@@ -1,0 +1,17 @@
+﻿@model Hero
+
+
+<h2>Details of @Model.Name</h2>
+
+<p>Powerlevel: @Model.Powerlevel</p>
+
+<h3>Weapons</h3>
+
+<ul>
+
+    @foreach (Weapon w in Model.MyWeapons)
+    {
+        <li>@w.Type - @w.Damage</li>
+    }
+
+</ul>

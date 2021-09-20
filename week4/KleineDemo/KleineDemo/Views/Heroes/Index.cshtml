@@ -1,0 +1,14 @@
+﻿@model List<Hero>
+
+
+<ul>
+
+    @foreach (Hero hero in Model)
+    {
+        <li>
+            @hero.Name - @hero.Powerlevel
+            <a href="/heroes/show/@hero.Id">heroes/show/@hero.Id</a>
+        </li>
+    }
+
+</ul>

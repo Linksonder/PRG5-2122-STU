@@ -118,10 +118,6 @@ namespace WieIsDeMol
             Console.WriteLine("You are now on turn {0} and there are {1} suspects left: ", this.turnCounter, this.investigator.Suspects.Count);
 
             //TODO: Print all suspects like '=== Suspect Nr. 1: Mr Person
-            foreach(Suspect i in investigator.Suspects)
-            {
-                Console.WriteLine(i.ToString());
-            }
         }
 
         private Gender paramToEnum(string gender)

@@ -1,0 +1,17 @@
+﻿@model List<MijnCV.Models.Project> 
+
+<h2>Projecten</h2>
+
+<p>Over de jare heb ik in verchillende verschillend kennis opgedaan. Twas zo mooi! </p>
+
+<h3>Mijn projecten:</h3>
+
+<ul>
+
+
+    @foreach (Project project in Model)
+    {
+        <li>@project.Naam - Van @project.Start.ToShortDateString() tot @project.Einde.ToShortDateString()</li>
+    }
+
+</ul>
