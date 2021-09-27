@@ -1,4 +1,4 @@
-using KleineDemo.Models;
+using KleineDemo2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KleineDemo
+namespace KleineDemo2
 {
     public class Startup
     {
@@ -25,16 +25,12 @@ namespace KleineDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MyContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            //Install-Package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation -Version 5.0.10
-
-            //van dit
-            //services.AddControllersWithViews()
-
-            //naar dit
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            //database
+            services.AddDbContext<MyContext>(
+                options => options.UseSqlServer("name=ConnectionStrings:default")
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
