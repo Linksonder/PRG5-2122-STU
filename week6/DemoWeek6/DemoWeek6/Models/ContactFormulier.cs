@@ -9,6 +9,9 @@ namespace DemoWeek6.Models
 {
     public class ContactFormulier
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }
