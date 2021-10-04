@@ -1,0 +1,19 @@
+﻿@model ContactFormulier 
+
+<h2>Contact me</h2>
+
+<form action="/Home/Contact" method="post">
+
+    @Html.DisplayFor(m => m.Email)
+    @Html.EditorFor(m => m.Email)
+    @Html.ValidationMessageFor(m => m.Email)
+
+    <br />
+
+    @Html.DisplayFor(m => m.Bericht)
+    @Html.EditorFor(m => m.Bericht)
+    @Html.ValidationMessageFor(m => m.Bericht)
+
+    <input type="submit"  value="Versturen" />
+
+</form>
