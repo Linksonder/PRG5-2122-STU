@@ -23,7 +23,6 @@ namespace DemoWeek6.Controllers
         public IActionResult Index()
         {
             var berichten = _context.Berichten.ToList();
-
             return View(berichten);
         }
 
